@@ -1,0 +1,41 @@
+<!--
+    CONVERSÃO DE STRING PARA NUMBER
+Number.parseInt(o que deseja converter) Vai converter a String para um número interito
+Number.parseFloat(o que deseja converter) Vai converter a String para um número real
+Number(o que deseja converter) Vai converter a String para um número e o javaScrip vai se virar para indentificar se é inteiro ou real.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão para inteiro</title>
+    <style>
+        body{
+            font: normal 1.3em Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: rgb(105 105 173);
+        }
+    </style>
+</head>
+<body> 
+    <h1>Olá, Mundo!</h1>      
+        <p>Já me livrei da maldição</p>   
+        <script>
+            var n1 = Number.parseInt(window.prompt('Digite um número:')) /*Fiz a conversão para inteiro porque o window.prompt retorna uma String, e o meu objetivo é fazer um cálculo. */
+            var n2 = Number.parseInt(window.prompt('Digite outro número: '))/*Vale lembrar que se a soma der número real, mesmo assim só vai ser armazenado o número inteiro, por causa da conversão*/      
+            window.alert('O resultado da soma é: '+(n1 + n2))
+
+            var n1 = Number.parseFloat(window.prompt('Digite um número real:')) /*Conversão para número real*/
+            var n2 = Number.parseFloat(window.prompt('Digite outro número real: '))            
+            window.alert('O resultado da soma dos números reis é: '+(n1 + n2))
+
+            var n1 = Number(window.prompt('Digite um número real:')) /*Só Number o javaScript se vira para identificar se é inteiro ou real*/
+            var n2 = Number(window.prompt('Digite outro número real: '))            
+            window.alert('O resultado da soma dos números cujo o javaScript vai se virar para identificar se é inteiro ou real é: '+(n1 + n2))   
+
+            
+        </script>   
+</body>
+</html>

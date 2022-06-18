@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somandos números</title>
+    <style>
+        body{
+            font: normal 1.4em arial,helvetica,sans-serif;
+        }
+        div#res{
+            margin-top: 20px;
+        }
+        input{
+            text-align: center;
+            max-width: 90px;
+            min-height: 25px;
+            font-size: 0.8em;
+        }
+        input#botao{
+            display: block;
+            margin: 20px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="button" value="Somar" onclick="somar()" id="botao">
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">  
+    <div id="res">Resultado</div>
+
+    <script>
+        function somar(){
+           var tn1 = window.document.getElementById('txtn1')
+           var tn2 = window.document.getElementById('txtn2')            
+           var res = window.document.querySelector('div#res')
+           
+           var n1 = Number(tn1.value) /*Number para fazer a conversão porque tn1 é um elemento de texto*/
+           var n2 = Number(tn2.value) /*value vai pegar o valor dentro do elemento*/
+           
+           var result = n1 + n2
+
+           res.innerHTML = result
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+JavaScript
+
+Conceito de cliente/servidor:
+
+Aparelho utilizado para acessar determinado serviço(celular, computador e etc) é o cliente.
+Já o servidor é o hardware da empresa específica(wpp, youtube, netflix e etc) que está fornecendo os dados( vídeos, textos, arquivos e etc).
+Esse processo ocorre quando você acessa um browser(google, firefox e etc) e digita a url(endereço) que vai te direcionar para o servidor e
+o mesmo vai fornecer os dados necessários.
+
+Técnicas de estudo:
+Assistir vídeo
+Treinar no computador
+Leitura 
+Anotar tudo
+Troca de conhecimentos em grupos
+Imaginar seus próprios projetos
+
+
+O Script de javaScript é colocado no final do body para que o script seja carregado depois do conteúdo (desde que seja configurado dessa maneira)
+Os comandos em javaScript são feitos sempre em letras minúsculas, e não precisa colocar ponto e vírgula no final

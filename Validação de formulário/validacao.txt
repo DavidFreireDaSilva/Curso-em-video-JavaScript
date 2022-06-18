@@ -1,0 +1,6 @@
+Site que explica como fazer uma validação de dados de formulário diretamente no navegador(lado do cliente) antes que chegue no servidor.
+SITE: https://medium.com/@jezmael/como-validar-os-dados-de-um-formul%C3%A1rio-com-javascript-abdc5a5fba67
+
+
+Vídeo que explica se uma senha confirma com a outra(faz apenas a comparação de senha e confirme a senha e não a verificação com a senha de servidor):
+https://www.youtube.com/watch?v=PyELz0Y7UoA

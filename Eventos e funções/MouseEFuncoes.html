@@ -1,0 +1,70 @@
+<!--
+    EXISTEM VÁRIOS EVENTOS EM JAVASCRIPT,CASO QUEIRA DAR UMA APROFUNDADA BASTA PESQUISAR NO GOOGLE POR: JAVASCRIPT DOWN EVENTS LIST e clicar no site: EVENT REFERENCE MDN
+
+    ALGUNS EVENTOS DO MOUSE:
+    Para disparar eventos de click no html, deve ser colocado os atributos abaixo na tag html
+
+    onmouseenter: É quando o mouse entra no elemento
+    onmousemove:  É quando o mouse está se movendo dentro do elemento
+    onmousedown:  É quando clica e segura no elemento
+    onmouseup: É quando para de clicar no elemento
+    onclick: É quando clica e solta rapidamente no elemento
+    onmouseout: É quando o mouse se move para fora do elemento
+
+
+
+
+FUNÇÕES:
+
+É um conjuntos de linhas de código(bloco) que vão ser disparadas assim que determinado evento ocorre, é basicamente a chamada de um método.
+
+function nomeDaAção(parâmetros(casoQueira)) {
+    
+    bloco
+}
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        div#area{
+            font: normal 1.4em arial,helvetica,sans-serif;
+            background-color: rgba(35, 150, 35, 0.338);            
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+        <div id ="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" >Interaja...</div>
+        <script>
+             var a = window.document.getElementById('area')
+             /* A ligação também pode ser feita pelojavaScript, com isso, o html não fica tão poluído. Exemplo abaixo:
+             a.addEventListener('click',clicar)
+             a.addEventListener('mouseenter',entrar)
+             a.addEventListener('mouseout',sair)
+             
+             addEventListener É como se fosse um "ouvinte/curioso" e assim que esse método for chamado ele aplica as configurações da função
+             */
+            function clicar(){                
+                a.innerText = 'Clicou!'  /* innerText vai alterar o texto de a e mostrar na tela*/ 
+                a.style.background = 'red'             
+            }
+            function entrar(){               
+                a.innerText = 'Entrou!'
+            }
+            function sair(){
+                a.innerText = 'Saiu!'
+                a.style.background = 'rgba(35, 150, 35, 0.338)'
+             }
+         
+        </script>
+</body>
+</html>

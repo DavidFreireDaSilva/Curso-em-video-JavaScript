@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição Switch</title>
+    <style>
+        body{
+            font: normal 1.2em Arial,Helvetica,Sans-serif;
+        }
+        
+    </style>
+</head>
+<body>   
+    <!--Essa estrutura é muito importante quando eu quero selecionar valores FIXOS, para não ter a necessidade de fazer vários if else-->
+    
+    <section>
+        <h1>Vamos ver que dia da semana é hoje através da estrutura Switch</h1>      
+        <p id="res">Aqui vai aparecer o resultado</p>
+        <input type="button" value="Verificar" name="" id="botao" onclick="clicar()">
+       <script>
+           function clicar(){
+           var data = new Date()
+           var diaSem = data.getDay()/*Vai pegar o dia da semana,MAS O VALOR VEM EM NÚMERO de 0-6*/
+           /*
+           0 - Domigo
+           1 - Segunda
+           2 - Terça
+           3 - Quarta
+           4 - Quinta
+           5 - Sexta
+           6 - Sabado 
+           */
+          var res = window.document.querySelector('#res')
+          res.innerHTML = `Hoje é `
+          switch(diaSem){
+              case 0: res.innerHTML += `domingo` ;break
+              case 1: res.innerHTML += `segunda` ;break
+              case 2: res.innerHTML += `terça` ;break
+              case 3: res.innerHTML += `quarta` ;break
+              case 4: res.innerHTML += `quinta` ;break
+              case 5: res.innerHTML += `sexta` ;break
+              case 6: res.innerHTML += `sábado` ;break
+              default: res.innerHTML = `Erro`
+
+          }
+           }
+       </script>
+    </section>    
+</body>
+</html>

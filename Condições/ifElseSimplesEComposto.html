@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição If{ } Else{ }</title>
+    <style>
+        body{
+            font: normal 1.2em Arial,Helvetica,Sans-serif;
+        }
+        #nascionalidade{
+            margin-top: 50px;
+        }
+        #velocidade{
+            max-width: 70px;
+            font-weight: bolder;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: aquamarine;
+            border: 3px solid black;
+            background-image: linear-gradient( to right , rgba(0, 0, 255, 0.443), rgba(255, 0, 0, 0.393));
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section id="veloci">
+         <h1>Limite de Velocidade</h1>
+         <p>Digite a velocidade em que está: <input type="number" name="" id="velocidade">   km/h</p>
+         <p>Dirija sempre usando cinto de segurança!</p>
+         <input type="button" value="Verificar" id="verificar" onclick="calcular()"> 
+         <div id="res"></div>
+            <script>         
+                
+                function calcular(){
+                    var vel = window.document.getElementById('velocidade')/*JavaScript acessando o elemento html através do DOM*/
+                    var convert = Number(vel.value)/*Conversão para Number*/
+                    
+                    var apareca = window.document.getElementById('res')/*JavaScript acessando o elemento html através do DOM*/
+
+                    if(convert > 60){
+                        apareca.innerHTML = 'Você está multado!'/*Alterando o texto de apareca através do innerHTML*/
+                    }else if(convert == " " ){
+                        apareca.innerHTML = 'Preencha o campo da sua velocidade'                        
+                    }else{                        
+                        apareca.innerHTML = 'Siga em frente e dirija com cuidado'
+                        
+                    }
+
+                }
+
+            </script>        
+    </section>
+
+    
+    <section  id="nascionalidade">
+       <h1>Verificação de estrangeiro</h1>
+       <p>Digite o país em que você nasceu: <input type="text" name="" id="paisNac" placeholder="Digite aqui"></p>
+       <p>Digite o país em que você mora hoje: <input type="text" name="" id="paisAtual"  placeholder="Digite aqui"></p>
+       <p><input type="button" value="Verificar" name="" id="botao" onclick="verificar()"></p>
+       <p id="resultado"></p>
+       <script>
+
+           function verificar(){           
+                var paisNasci = window.document.getElementById('paisNac')
+                var paisAtual = window.document.querySelector('#paisAtual')
+                var resultado = window.document.getElementById('resultado')
+                
+                if(paisNasci.value  == paisAtual.value){
+                    resultado.innerHTML = 'Você não é estrangeiro'               
+                }else{
+                    resultado.innerHTML = 'Você é estrangeiro'
+                }              
+            }
+           
+       </script>
+    </section>    
+</body>
+</html>

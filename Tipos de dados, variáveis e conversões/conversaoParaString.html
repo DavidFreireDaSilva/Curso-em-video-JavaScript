@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--   
+    CONVERSÃO DE NUMBER PARA STRING
+String(o que deseja converter)
+o que deseja converter.toString()
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão para string</title>
+    <style>
+        body{
+            font: normal 1.3em Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: rgb(105 105 173);
+        }
+    </style>
+</head>
+<body> 
+    <h1>Olá, Mundo!</h1>      
+        <p>Já me livrei da maldição</p>   
+        <script>
+           
+            /*NESSE CASO NÃO PRECISA CONVERTER PORQUE O WINDOW.PROMPT JÁ RETORNA UMA STRING, MAS VOU CONVERTER APENAS PARA QUESTÕES DIDÁTICAS*/
+
+            var n7 = Number.parseFloat(window.prompt('Digite um número para ser considerado string:'))
+            var n8 = Number.parseFloat(window.prompt('Digite outro número para ser considerado string: '))  
+            var n7convert = String(n7)
+            var n8convert = String(n8)
+            window.alert('A conversão(concatenação) para string é: '+(n7convert+n8convert))
+
+            var n7 = Number.parseFloat(window.prompt('Digite um número para ser considerado string:'))
+            var n8 = Number.parseFloat(window.prompt('Digite outro número para ser considerado string: '))  
+            var n7convert = n7.toString()
+            var n8convert = n8.toString()        
+            window.alert('A conversão(concatenação) para string é: '+(n7convert+n8convert))
+            
+        </script>   
+</body>
+</html>
+

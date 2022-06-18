@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções de string</title>
+    <style>
+        body{
+            font: normal 1.3em Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: rgb(105 105 173);
+        }
+    </style>
+</head>
+    <body> 
+        <h1>Olá, Mundo!</h1>      
+            <p>Já me livrei da maldição</p>   
+                <script>
+                    
+                    
+                    /*===================================================================================*/
+                    
+                    /*Sem placeholder na String*/
+                    var nome = window.prompt("Digite seu nome")
+                    var idade = window.prompt("Digite sua idade")
+                    var nota = window.prompt("Digite sua nota")
+                    window.alert("O aluno "+nome+" com a idade de "+idade+" anos tirou nota: "+nota) /*Olha a diferença sem placeholder na String*/
+                    
+                    /*PLACEHOLDER NA STRING EM JS ${VARIÁVEL}*/
+                    /*Com placeholder na String*/
+                    var nome = window.prompt("Digite seu nome")
+                    var idade = window.prompt("Digite sua idade")
+                    var nota = window.prompt("Digite sua nota")
+                    window.alert(`O aluno ${nome} com a idade de ${idade} anos tirou uma nota de ${nota} `) /*Olha a diferença cem placeholder na String*/                
+             
+                    var nome = window.prompt("Qual seu nome? (Desejo escrever na tela e não uma menssagem como alert)")
+                    document.writeln(`Olá <strong>${nome}</strong>. Seu nome tem ${nome.length} caracteres<br>`) /*document.write Vai levar a informação direto no conteúdo do body, e não trazer como uma esécie de alerta na tela*/   
+                    document.write(`Seu nome com todas as letras maiúsculas é: ${nome.toUpperCase()}<br>`)
+                    document.write(`Seu nome com todas as letras minúsculas é: ${nome.toLowerCase()}<br>`)
+                </script> 
+
+            <section>
+                
+                <p>stringOuVariávelDeString.length</p><!--Conta quantos caracteres a String tem (contado com o espaço)-->
+                <p>stringOuVariávelDeString.toUpperCase()</p> <!--Coloca todos os caractres da string em letras maiúsculas-->
+                <p>stringOuVariávelDeString.toLowerCase()</p><!--Coloca todos os caractres da string em letras minúsculas-->   
+
+            </section>  
+    </body>
+</html>
+
+

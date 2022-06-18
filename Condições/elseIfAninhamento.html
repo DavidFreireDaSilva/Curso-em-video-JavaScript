@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição If{ } Else{ } Aninhada</title>
+    <style>
+        section{
+            font: normal 1.2em Arial, Helvetica, Sans-serif;
+        }
+        #hrs{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+            <h1>VOCÊ VOTA?</h1>
+            <p>Digite a sua idade: <input type="Number" name="" id="idade"></p> 
+            <p><input type="button" name="" id="botao" value="Verificar" onclick="verificarr()"></p>       
+            <div id="res">Aqui vai aparecer o resultado</div>
+            <script>
+                function verificarr(){
+                    var idade = window.document.querySelector('#idade')
+                    var converIdade = Number(idade.value) /*.value é para pegar o valor dessa variável*/
+                    var result = window.document.getElementById('res')            
+                    if(converIdade < 16){
+                        result.innerHTML = `Não vota`
+                    }else if((converIdade >= 16 && converIdade < 18) || converIdade > 65){
+                        result.innerHTML = `Voto opcional`
+                    }else{
+                        result.innerHTML = `Voto obrigatório`               
+                    }            
+                }        
+            </script>
+    </section>
+    <secton>
+        
+        <h1>Pegando a hora atual do sistema</h1>        
+        <input type="button" value="Verificar" name="" id="botao" onclick="verificar()">
+        <div id="hrs">Aqui vai aparecer o resultado</div>
+         <script>
+             function verificar(){
+             var horass = new Date() /*Só pega horas e não minutos*/
+             var horas = horass.getHours() /*Só pega horas e não minutos, pega a hora do SISTEMA QUE ESTÁ RODANDO o script*/            
+             
+             var acesso = window.document.querySelector('div#hrs')              
+             acesso.innerHTML = `Agora são: ${horas} horas`
+             
+             if((horas > 12 ) && (horas <= 18) ){
+                acesso.innerHTML += `<br>Boa tarde`
+             }else if(horas > 18){
+                acesso.innerHTML += `<br>Boa noite`
+             }else{
+                acesso.innerHTML += `<br>Bom dia`
+             }
+             
+             }             
+         </script>
+    </secton>
+
+    <section>
+        <h1>Verificando estrangeiros</h1>
+        <p>Digite aqui o país em que você nasceu: <input type="text" name="" id="paisNasc"></p>
+        <p>Digite aqui o país em que você mora hoje: <input type="text" name="" id="paisAtual"></p>
+        <input type="button" value="Verificar" name="" id="botao" onclick="clicar()">
+        <p id="resultado"></p>
+        <script>
+            function clicar(){
+                var paisNasci = window.document.querySelector('#paisNasc')
+                var paisAtual = window.document.querySelector('#paisAtual')
+                var resultadoPais = window.document.querySelector('#resultado')
+                if( paisNasci.value == paisAtual.value){
+                    resultado.innerText = `Você não é estrangeiro`
+                }else{
+                    resultado.innerText = `Você é estrangeiro`
+                }                
+
+
+            }
+        </script>
+    </section>
+    
+</body>
+</html>

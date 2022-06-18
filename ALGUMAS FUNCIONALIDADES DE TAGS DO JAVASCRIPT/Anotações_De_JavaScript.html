@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>Anotações de JavaScript</title>
+    </head>
+    <body>
+        <section>
+            <script> 
+            /*FORA DE FAZER UM ARQUVO JS EXTERNO, ASSIM COMO NO CSS*/
+             /*<script src="script/script.js"><script>  Chamada para um JS externo, ou seja, as configurações vão estar em outro arquivo*/          
+                window.alert('Minha primeira menssagem')/*Menssagem de alerta, assim que a página é acessada*/
+               
+                window.confirm('Está gostande de JavaScript?')/*Menssagem de confirmação, assim que a página é acessada aparece a minha mensagem das aspas e posteriormente a opção "sim" e "não"*/
+               
+                window.prompt('Qual é o seu nome?')/*Menssagem de preenchimento, assim que a página é acessada aparece a minha mensagem das aspas e posteriormente a opção para escrever determinada menssagem*/    
+               
+                document.write(`Olá <strong>${nome}</strong>. Seu nome tem ${nome.length} caracteres<br>`) /*document.write Vai levar a informação direto no conteúdo do body, e não trazer como uma espécie de alerta na tela*/         
+            </script>  
+        </section> 
+
+<!---====================================================================================-->
+        <section>
+            <script id="NÚMEROS SISTEMA"> 
+            var data = new Date() /*sempre que quiser pegar um número atual de sistema, deve-se declarar um objeto new Date()*/ 
+            var ano = data.getFullYear() /*getFullYear() é para pegar o ano com os 4 digitos*/ 
+            var horas = data.getHours() /*getHours() é para pegar o a hora do sistema (SOMENTE A HORA) e não os minutos, segundos e etc*/ 
+            </script>  
+        </section> 
+<!---====================================================================================-->
+
+        <section id="FORMATAÇÕES DE STRING">
+            <script>                 
+                /*CONVERSÃO DE NUMBER PARA STRING*/
+                String(n1)
+                n1.toString()  
+                
+                stringOuVariávelDeString.length/*Conta quantos caracteres a String tem (contado com o espaço)*/
+                
+                stringOuVariávelDeString.toUpperCase()/*Coloca todos os caractres da string em letras maiúsculas*/
+                
+                stringOuVariávelDeString.toLowerCase()/*Coloca todos os caractres da string em letras minúsculas*/
+            </script>
+        </section>
+
+<!---====================================================================================-->
+
+        <section id="FORMATAÇÕES DE NUMBER">
+            <script>      
+                 /*CONVERSÃO DE STRING PARA NUMBER*/   
+                Number.parseInt(n1)/*Conversão para inteiro*/  
+                Number.parseFloat(n1)/*Conversão para real*/
+                Number(n1) /*Só Number o javaScript se vira para identificar se é inteiro ou real*/    
+                 
+                 n1.toFixed(2)/*toFixed(quantasCasasQuer)Formataçaõ para as casas decimas*/
+                 
+                 n1.toFixed(2).replace('.',',')/*.replace('oqueQuerTrocar','OqueQuerQueFiqueNoLugar')Formataçaõ para trocar uma coisa por outra, primerio é o que quer trocar e depois o que quer colocar no lugar*/
+                
+                 n1.toLocaleString('pt-BR', {style:'currency' , currency:'BRL'})
+                        /*                  style vai ser currency(dinheiro)
+                toLocaleString('pt-BR', {style:'currency' , currency:'BRL'
+                        localizar para o brasil        currency de real(BRL), dolar(USD), euro(EUR) 
+
+                toLocaleString ()É uma string localizada, ou seja, localizada por parte do mundo
+                o objeto currency mostra em valor monetário
+                corrency após a vírgula para indicar qual a moeda do que colocar
+                */
+            </script>
+        </section>
+
+<!---====================================================================================-->
+        <section id="OPERADORES">
+            <script>                 
+                /*
+                !   Negação/Não
+                &&  Conjunção/E
+                ||  Disjunção/OU
+                =   Recebe
+                ==  Comparando igualdade ( Nesse caso não compara o tipo, então 5 int e 5 string são considerados iguais)
+                === Comparando se os valores são idênticos, ou seja, o mesmo valor e o mesmo tipo
+                +   Soma/Concatenação
+                -   Subtração
+                *   Multiplicação
+                /   Divisão
+                %   Resto da divisão
+                **  Número ao quadrado/Potência
+
+                ORDENS DE PRECEDÊNCIAS
+
+                1° Aritméticos (=, -, * e etc)
+                ()           1° parênteses
+                **           2° Potência
+                / % *        3° Divisão, resto da divisão ou multiplicação (se todos estiverem na mesma expressão, vai ser feito o que vim primeiro na expressão, da esqueda para direita)
+                + -          4° Soma ou subtração (se ambos estiverem na mesma expressão, vai ser feito o que vim primeiro na expressão, da esqueda para direita)
+
+                
+                2° Relacionais (==, > , < , <= , <= , !=)
+                Não tem ordem entre eles, faz o que vem primeiro da esquerda para direita
+
+                3° Logico (true,false)               
+                1° Não 
+                2° E  (Ambos verdadeiros)
+                3° Ou (Ao menos 1 verdadeiro)
+
+
+                OPERADOR TERNÁRIO
+
+                TESTE ? TRUE : FALSE
+                
+                exemplo:
+                var media = 5.5                 
+                var res = media >= 7.0 ? "Aprovado" : "Reprovado"
+                
+                Nesse caso o res vai receber Reprovado
+                
+                */            
+             </script>
+        </section>
+
+<!---====================================================================================-->
+        <section id="SELETORES">
+            <script>       
+                /*   PRINCIPAIS MANEIRAS DE SELECIONAR OS ELEMENTOS POR JS:
+
+
+                                MARCA/TAG ->window.document.getElementsByTagName('tag')[posiçãoDela]
+                                exemplo armazenando em variável:
+                    var p1 = window.document.getElementsByTagName('p')[0]
+                window.document.write(p1.innerHtml)/*('tagQueDesejaSelecionar')[posiçãoQueElaEstá]  /*innerHtml é o texto e as formatações que estão dentro
+
+
+                                ID -> window.document.getElementById('idNoElementoHtml')
+                    var p1 = window.document.getElementById('exemplop2')
+                window.document.write('<br>'+p1.innerText) /*innerText é o texto que está dentro 
+                                
+                
+                            NOME ->  window.document.getElementsByName('nameNoElementoHtml')[posiçãoDela]
+                    var p1 = window.document.getElementsByName('exemplop3')[0]
+                window.document.write('<br>'+p1.innerText)
+
+
+                            CLASS ->  window.document.getElementsByClassName('classNoElementoHtml')[posiçãoDela]
+                    var p1 = window.document.getElementsByClassName('exemplop4')[0]
+                window.document.write('<br>'+p1.innerText)
+
+
+                            SELECTOR -> window.document.querySelector('formadeSelecionarIdOuClassNoCss')
+                    var p1 = window.document.querySelector('p#exemplop5')
+                window.document.write('<br>'+p1.innerText)
+
+                innerText /*innerText é o texto que está dentro e vai alterar e mostrar na tela
+                innerHtml /*innerHtml é o texto e as formatações que estão dentro e vai alterar e mostrar na tela*/          
+                
+                /*POR MARCA/TAG*/
+                var p1 = window.document.getElementsByTagName('p')[2]
+                window.document.write(p1.innerHTML) /*innerHtml é o texto e as formatações que estão dentro*/ 
+                /*POR ID*/
+                var p1 = window.document.getElementById('exemplop2')
+                window.document.write('<br>'+p1.innerText) /*innerText é o texto que está dentro*/ 
+                /*POR NAME*/
+                var p1 = window.document.getElementsByName('exemplop3')[0]
+                window.document.write('<br>'+p1.innerText)
+                /*POR CLASS*/
+                var p1 = window.document.getElementsByClassName('exemplop4')[0]
+                window.document.write('<br>'+p1.innerText)
+                /*POR SELETOR CSS*/
+                var p1 = window.document.querySelector('p#exemplop5')
+                window.document.write('<br>'+p1.innerText)                
+            </script>
+        </section>
+
+<!---====================================================================================-->
+        <section id="EVENTOS, FUNÇÕES E MOUSE">
+            <script>   
+            /*    
+                    EXISTEM VÁRIOS EVENTOS EM JAVASCRIPT,CASO QUEIRA DAR UMA APROFUNDADA BASTA PESQUISAR NO GOOGLE POR: JAVASCRIPT DOWN EVENTS LIST e clicar no site: EVENT REFERENCE MDN
+
+                    ALGUNS EVENTOS DO MOUSE:
+                    Para disparar eventos de click no html, deve ser colocado os atributos abaixo na tag html
+
+                    onmouseenter: É quando o mouse entra no elemento
+                    onmousemove:  É quando o mouse está se movendo dentro do elemento
+                    onmousedown:  É quando clica e segura no elemento
+                    onmouseup: É quando para de clicar no elemento
+                    onclick: É quando clica e solta rapidamente no elemento
+                    onmouseout: É quando o mouse se move para fora do elemento
+                    onload: Significa carregar, quando colocado no body, assim que a página carrega a configuração dessa function já vai ser ativada-->
+
+
+                    FUNÇÕES:
+
+                    É um conjuntos de linhas de código(bloco) que vão ser disparadas assim que determinado evento ocorre, é basicamente a chamada de um método.
+
+                    function nomeDaAção(parâmetros(casoQueira)) {
+
+                    bloco
+                    }
+                    */
+                   /*
+                    <div id ="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" >Interaja...</div>
+                    */
+                    var a = window.document.getElementById('area')
+                    /* A ligação também pode ser feita pelo javaScript, com isso, o html não fica tão poluído. Exemplo abaixo:
+                    a.addEventListener('click',clicar)
+                    a.addEventListener('mouseenter',entrar)
+                    a.addEventListener('mouseout',sair)
+                    
+                    addEventListener É como se fosse um "ouvinte/curioso" e assim que esse método for chamado ele aplica as configurações da função
+                    */
+                    function clicar(){                
+                        a.innerText = 'Clicou!'  /* innerText vai alterar o texto de a e mostrar na tela*/ 
+                        a.style.background = 'red'             
+                    }
+                    function entrar(){               
+                        a.innerText = 'Entrou!'
+                    }
+                    function sair(){
+                        a.innerText = 'Saiu!'
+                        a.style.background = 'rgba(35, 150, 35, 0.338)'
+                    }
+                    /*
+
+                    <h1>Somando valores</h1>
+                    <input type="number" name="txtn1" id="txtn1"> +
+                    <input type="number" name="txtn2" id="txtn2">
+                    <input type="button" value="Somar" onclick="somar()" >
+                    <div id="res">Resultado</div>
+                    */                
+                        function somar(){
+                        var tn1 = window.document.getElementById('txtn1')
+                        var tn2 = window.document.getElementById('txtn2') 
+                        
+                        var res = window.document.querySelector('div#res')
+                        
+                        var n1 = Number(tn1.value) /*Number para fazer a conversão porque tn1 é um elemento de texto*/
+                        var n2 = Number(tn2.value) /*value vai pegar o valor dentro do elemento*/
+                        
+                        var result = n1 + n2
+
+                        res.innerHTML = result  /*innerHtml é o texto e as formatações que estão dentro e vai alterar e mostrar na tela*/   
+                        }
+            </script>
+        </section>
+        <!---====================================================================================-->
+
+        <section id="ANO DO SISTEMA, ALTERAÇÃO DE IMAGENS DINAMICAMNETE EM JS">
+            <script> 
+                function verificar(){
+                    var data = new Date()
+                    var ano = data.getFullYear() /*getFullYear() é para pegar o ano com os 4 digitos*/
+                    var anoNasci = window.document.querySelector('#txtano')
+                    var res = window.document.querySelector('#res')
+
+                    if((anoNasci.value.length == 0) || (Number(anoNasci.value) > ano)){ /*anoNasci.value.length == 0 está verificando se o comprimento do valor é igual a 0*/  /*anoNasci.value > ano está verificando se o ano de nascimento é maior que o ano atual(consultado pelo sistema)*/
+                        window.alert('Verifique os dados e tente novamente!')
+                    }else{
+                        var fsex = window.document.getElementsByName('radsex')/*Acessei o elementos por name porque os elementos são radios e tem o mesmo nome*/
+                        var idade = ano - Number(anoNasci.value)
+                        
+                        var genero = ''
+
+                        var img = document.createElement('img') /*É a mesma coisa que criar a tag img pelo html*/
+                        img.setAttribute('id','foto')  /*Inseri o atributo id em imagem com o valor no atributo de foto*/
+
+                        if(fsex[0].checked){ /*.checked significa marcado ou checado, ou seja, se o que estiver marca/checado for a posição 0 então é masculino*/
+                            genero = 'Homem'  
+                            if(idade >= 0 && idade < 10){ //CRIANÇA
+                                    img.setAttribute('src','imagens/nenemHomem1.png')                    
+                            }else if(idade >= 10 && idade < 21){//JOVEM
+                                    img.setAttribute('src','imagens/jovemHomem1.png')
+                            }else if(idade >= 21 && idade < 50){//ADULTO
+                                    img.setAttribute('src','imagens/adultoHomem1.png')
+                            }else{//IDOSO
+                                    img.setAttribute('src','imagens/idosoHomem1.png')
+                            }
+                        }else if(fsex[1].checked){
+                            genero = 'Mulher'
+                            if(idade >= 0 && idade < 10){ //CRIANÇA
+                                    img.setAttribute('src','imagens/nenemMulher1.png')                    
+                            }else if(idade >= 10 && idade < 21){//JOVEM
+                                    img.setAttribute('src','imagens/jovemMulher1.png')
+                            }else if(idade >= 21 && idade < 50){//ADULTO
+                                    img.setAttribute('src','imagens/adultaMulher1.png')
+                            }else{//IDOSO
+                                    img.setAttribute('src','imagens/idosaMulher1.png')
+                            }
+                        }
+                        res.style.textalign = 'center'
+                        res.innerHTML = `Detectamos ${genero} com ${idade} anos<br>`
+                        res.appendChild(img) /*appendChild(elemento desejado) significa adicionar um conteúdo na página web*/
+                        
+                        
+                    }
+
+                }                
+                
+            </script>
+        </section>
+
+<!---====================================================================================-->
+        <section>
+            <script>
+                function tabuada(){
+                    var num = window.document.querySelector('#txtn')
+                    var tab = window.document.querySelector('#seltab')
+                
+                    if(num.value.length == 0){
+                        window.alert('Erro! Por favor, digite um número!')
+                    }else{
+                        var n = Number(num.value)
+                        var c = 1
+                        tab.innerHTML = '' /*tab vazia para que limpe o elemento para receber o próximo dado*/
+                        while(c <= 10){
+                            var item = window.document.createElement('option')/*Criando o elemento option do select através do js, porque dentro do select tem que ter o elemento option*/
+                            item.text = `${n} x ${c} = ${n*c}` /*.text para colocar o dado dentro do option*/
+                            item.value = `tab${c}`/*.value nesse caso é para inserir um dado dentro de um atributo value no option, geralmente serve para quando usar php, serve para "identificar" os options*/
+                            tab.appendChild(item)/*.appendClid, ou seja, adicione um elemento filho dentro de tab, que nesse caso é o item*/ 
+                            c++    
+                        }
+                    }
+                }
+            </script>
+        </section> 
+
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!--
+Conjunto de objetos dentro do navegador que vai dar acessos aos componentes internos do website
+Não está presente dentro do Nodejs(roda no servidor), só está presente dentro do navegador
+          
+            ÁRVORE DOM
+Um exemplo simples de alguns elementos na árvore
+           
+            window
+               |
+            document
+               |
+              html
+          |          |
+         head       body
+      |    |        |       |          |   
+    meta  title     h1      p         main
+                            |          |
+                          strong     section
+             E ETC
+
+    O QUE ESTÁ EM CIMA É PARENT
+    O QUE ESTÁ EM BAIXO É CHILD
+-->
+-------------------------------------------------------------------------------------------------------------------
+<!--
+PRINCIPAIS MANEIRAS DE SELECIONAR OS ELEMENTOS POR JS:
+                 MARCA/TAG ->window.document.getElementsByTagName('tag')[posiçãoDela]
+                 exemplo armazenando em variável:
+      var p1 = window.document.getElementsByTagName('p')[0]
+ window.document.write(p1.innerHtml)/*('tagQueDesejaSelecionar')[posiçãoQueElaEstá]  /*innerHtml é o texto e as formatações que estão dentro*/ 
+
+
+                 ID -> window.document.getElementById('idNoElementoHtml')
+      var p1 = window.document.getElementById('exemplop2')
+ window.document.write('<br>'+p1.innerText) /*innerText é o texto que está dentro*/ 
+                
+ 
+               NOME ->  window.document.getElementsByName('nameNoElementoHtml')[posiçãoDela]
+       var p1 = window.document.getElementsByName('exemplop3')[0]
+ window.document.write('<br>'+p1.innerText)
+
+
+              CLASS ->  window.document.getElementsByClassName('classNoElementoHtml')[posiçãoDela]
+       var p1 = window.document.getElementsByClassName('exemplop4')[0]
+ window.document.write('<br>'+p1.innerText)
+
+
+               SELECTOR -> window.document.querySelector('formadeSelecionarIdOuClassNoCss')
+       var p1 = window.document.querySelector('p#exemplop5')
+ window.document.write('<br>'+p1.innerText)
+
+innerText /*innerText é o texto que está dentro*/ 
+innerHtml /*innerHtml é o texto e as formatações que estão dentro*/
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font: normal 1.1em Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p id="exemplop2">Acessando por ID</p>
+    <p name="exemplop3">Acessando por NAME</p>
+    <p>Acessando por <strong>MARCA</strong></p>
+    <p class="exemplop4">Acessando por CLASS</p>
+    <p id="exemplop5">Acessando por SELECTOR (CSS)</p>
+    <div>Clique em mim<hr></div>    
+    <script>
+
+        /*POR MARCA/TAG*/
+        var p1 = window.document.getElementsByTagName('p')[2]
+        window.document.write(p1.innerHTML) /*innerHtml é o texto e as formatações que estão dentro*/ 
+        /*POR ID*/
+        var p1 = window.document.getElementById('exemplop2')
+        window.document.write('<br>'+p1.innerText) /*innerText é o texto que está dentro*/ 
+        /*POR NAME*/
+        var p1 = window.document.getElementsByName('exemplop3')[0]
+        window.document.write('<br>'+p1.innerText)
+        /*POR CLASS*/
+        var p1 = window.document.getElementsByClassName('exemplop4')[0]
+        window.document.write('<br>'+p1.innerText)
+        /*POR SELETOR CSS*/
+        var p1 = window.document.querySelector('p#exemplop5')
+        window.document.write('<br>'+p1.innerText)
+
+    </script>
+</body>
+</html>

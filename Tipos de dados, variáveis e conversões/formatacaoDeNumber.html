@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Váriaveis</title>
+    <style>
+        body{
+            font: normal 1.3em Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: rgb(105 105 173);
+        }
+    </style>
+</head>
+<body> 
+    <h1>Olá, Mundo!</h1>      
+        <p>Já me livrei da maldição</p>   
+        <script>
+           var n1 = Number.parseFloat(window.prompt('Digite um número'))  
+           document.write(`<strong>${n1}</strong>`)
+           
+           document.write(`<br>Número formatado com 2 casas decimas: <strong>${n1.toFixed(2)}</strong>`)/*toFixed(quantasCasasQuer)Formataçaõ para as casas decimas*/
+           
+           document.write(`<br>Número formatado com 2 casas decimas e usado o replace para trocar o ponto pela vírgula: <strong>${n1.toFixed(2).replace('.',',')}</strong>`)/*.replace Formataçaõ para trocar uma coisa por outra, primerio é o que quer trocar e depois o que quer colocar no lugar*/
+           
+           document.write('<br>Número formatado para apresentar uma string local e com a moeda do Brasil: '+n1.toLocaleString('pt-BR', {style:'currency' , currency:'BRL'}))
+            /*                  style vai ser currency(dinheiro)
+           toLocaleString('pt-BR', {style:'currency' , currency:'BRL'
+                  localizar para o brasil        currency de real(BRL), dolar(USD), euro(EUR) 
+
+           toLocaleString ()É uma string localizada, ou seja, localizada por parte do mundo
+           o objeto currency mostra em valor monetário
+           corrency após a vírgula para indicar qual a moeda do que colocar
+           */
+           
+        </script>   
+</body>
+</html>
+     
